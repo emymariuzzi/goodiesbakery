@@ -1,0 +1,221 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --azul: #A8D8EA;
+  --azul-escuro: #6BB8D4;
+  --creme: #FFF8F0;
+  --rosa: #F9C8D0;
+  --rosa-escuro: #F0A0B0;
+  --lilas: #D4B8E0;
+  --marrom: #7B4F3A;
+  --marrom-escuro: #5A3525;
+  --branco: #FFFFFF;
+  --texto: #4A3020;
+  --sombra: rgba(123, 79, 58, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--creme);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+nav {
+  background-color: var(--branco);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  box-shadow: 0 2px 12px var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+  color: var(--marrom);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.nav-logo span {
+  color: var(--azul-escuro);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rosa-escuro);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--marrom);
+}
+
+.nav-links a:hover::after,
+.nav-links a.ativo::after {
+  width: 100%;
+}
+
+.nav-links a.ativo {
+  color: var(--marrom);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--sombra);
+}
+
+.btn-primario {
+  background-color: var(--marrom);
+  color: var(--branco);
+}
+
+.btn-secundario {
+  background-color: var(--rosa);
+  color: var(--marrom-escuro);
+}
+
+.btn-azul {
+  background-color: var(--azul);
+  color: var(--marrom-escuro);
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background-color: var(--marrom);
+  color: var(--creme);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  margin-top: 4rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+footer .footer-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: var(--rosa);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+footer .footer-redes {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 1rem 0;
+}
+
+footer .footer-redes a {
+  color: var(--azul);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+footer .footer-redes a:hover {
+  color: var(--rosa);
+}
+
+/* ---- UTILITÁRIOS ---- */
+.secao-titulo {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: var(--marrom);
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.secao-subtitulo {
+  text-align: center;
+  color: var(--marrom-escuro);
+  opacity: 0.7;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-promo { background: var(--rosa); color: var(--marrom-escuro); }
+.tag-novo { background: var(--lilas); color: var(--marrom-escuro); }
+.tag-popular { background: var(--azul); color: var(--marrom-escuro); }
+.tag-alergenico { background: #FFE5A0; color: #7A5500; }
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

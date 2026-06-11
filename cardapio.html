@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardápio – Goodies Bakery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cardapio.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Goodies <span>Bakery</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cardapio.html" class="ativo">Cardápio</a></li>
+      <li><a href="reservas.html">Reservas</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <header class="cardapio-header">
+    <h1>Nosso Cardápio</h1>
+    <p>Feito com amor, ingredientes frescos e muita criatividade</p>
+  </header>
+
+  <div class="barra-busca">
+    <span class="icone-busca"></span>
+    <input type="text" id="campoBusca" placeholder="Buscar produto..." oninput="filtrarBusca()" />
+  </div>
+
+  <div class="filtros">
+    <button class="btn-filtro ativo" onclick="filtrarCategoria('todos', this)">Todos</button>
+    <button class="btn-filtro" onclick="filtrarCategoria('cupcake', this)">Mini Cupcakes</button>
+    <button class="btn-filtro" onclick="filtrarCategoria('doce', this)">Doces</button>
+    <button class="btn-filtro" onclick="filtrarCategoria('salgado', this)">Salgados</button>
+    <button class="btn-filtro" onclick="filtrarCategoria('milkshake', this)">Milkshakes</button>
+  </div>
+
+  <div class="cardapio-conteudo">
+
+    <div class="legenda-alergenicos">
+      <h3>⚠️ Alergênicos identificados nos produtos:</h3>
+      <ul>
+        <li> Amendoim</li>
+        <li> Leite</li>
+        <li> Glúten</li>
+        <li> Ovo</li>
+        <li> Nozes</li>
+        <li> Cacau</li>
+      </ul>
+    </div>
+
+    <div class="secao-cardapio" data-cat="cupcake">
+      <h2 class="secao-cardapio-titulo">Mini Cupcakes</h2>
+      <div class="grid-cardapio">
+
+        <div class="card-item" data-nome="Brigadeiro" data-cat="cupcake">
+          <div class="card-item-imagem" style="background:#D4EDFF;"><img src="brigadeiroCupcake.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags"><span class="tag tag-popular">Favorito</span></div>
+            <h3>Brigadeiro</h3>
+            <p class="descricao">Cupcake mais pedido da casa.</p>
+            <p class="ingredientes">Ingredientes: brigadeiro tradicional e granulado belga.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 8,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="Rafaello" data-cat="cupcake">
+          <div class="card-item-imagem" style="background:#EDD9C0;"><img src="raffaello.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags"><span class="tag tag-popular">Popular</span></div>
+            <h3>Rafaello</h3>
+            <p class="descricao">Cupcake de Rafaello.</p>
+            <p class="ingredientes">Ingredientes: Massa de cacau belga com coco, recheio de ganache de Raffaello e amendôas, cobertura de creme de Raffaello e decoração com chocolate branco, coco e mini macaron.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 13,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="Banoffe" data-cat="cupcake">
+          <div class="card-item-imagem" style="background:#C9A882;"><img src="banoffe.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags"><span class="tag tag-novo">Novo</span></div>
+            <h3>Banoffe</h3>
+            <p class="descricao">Mini Cupcake de Banoffe</p>
+            <p class="ingredientes">Ingredientes: Massa de doce de leite, recheio de doce de leite e banana caramelizada, cobertura de creme de leite ninho e crumble de amendôas.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 13,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="secao-cardapio" data-cat="doce">
+      <h2 class="secao-cardapio-titulo">Doces</h2>
+      <div class="grid-cardapio">
+
+        <div class="card-item em-destaque" data-nome="Browninho" data-cat="doce">
+          <div class="card-item-imagem" style="background:#FFE0E6;"><img src="brownie.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+              <span class="tag tag-popular">Mais pedido</span>
+            </div>
+            <h3>Browninho</h3>
+            <p class="descricao">O produto mais vendido da loja!</p>
+            <p class="ingredientes">Brownie de chocolate belga e Nutella e uma calda deliciosa de leite ninho.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 29,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="caixinha de brigadeiros" data-cat="doce">
+          <div class="card-item-imagem" style="background:#FFF0CC;"><img src="brigadeiros.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+              <span class="tag tag-popular">Mais pedido</span>
+            </div>
+            <h3>Caixinha de brigadeiros</h3>
+            <p class="descricao">Caixa com quatro unidades de brigadeiros tradicional.</p>
+            <p class="ingredientes">Brigadeiro tradicional com confeitos de chocolate belga.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 22,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="caramel bar" data-cat="doce">
+          <div class="card-item-imagem" style="background:#E8E0FF;"><img src="caramelbar.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+              <span class="tag tag-novo">Novo</span>
+            </div>
+            <h3>Caramel bar</h3>
+            <p class="descricao">Biscoito.</p>
+            <p class="ingredientes">Biscoito amanteigado com uma camada de caramelo e chocolate.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 8,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="secao-cardapio" data-cat="salgado">
+      <h2 class="secao-cardapio-titulo">Salgados</h2>
+      <div class="grid-cardapio">
+
+        <div class="card-item" data-nome="focaccia de parma" data-cat="salgado">
+          <div class="card-item-imagem" style="background:#FFF4D4;"><img src="focacciaParma.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+              <span class="tag tag-popular">Favorito</span>
+            </div>
+            <h3>Focaccia de Parma</h3>
+            <p class="descricao">Focaccia de fermentação natural.</p>
+            <p class="ingredientes">Recheada com presunto parma, tomate confit, mussarela de búfala e molho pesto.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 34,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="focaccia de frango" data-cat="salgado promo">
+          <div class="card-item-imagem" style="background:#FFE0E6;"><img src="focacciaFrango.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <h3>Focaccia de Frango</h3>
+            <p class="descricao">Focaccia de fermentação natural.</p>
+            <p class="ingredientes">Recheio de frango, molho cremoso de requeijão, pesto e mussarela.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 34,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="trio de coxinhas" data-cat="salgado">
+          <div class="card-item-imagem" style="background:#E8D5C0;"><img src="trioCoxinha.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+            </div>
+            <h3>Trio de coxinhas</h3>
+            <p class="descricao">Trio de coxinhas, prfeitas!</p>
+            <p class="ingredientes">Com recheiro ultra delicioso, receita de vó, massa delicada empanada em farinha panko.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 21,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+                <div class="card-item" data-nome="bolinha de queijo" data-cat="salgado">
+          <div class="card-item-imagem" style="background:#E8D5C0;"><img src="trioBolinha.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+            </div>
+            <h3>Trio de bolinhas de queijo</h3>
+            <p class="descricao">3 deliciosas bolinhas de queijo!</p>
+            <p class="ingredientes">Massa delicada empanada em farinha panko.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 21,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+                <div class="card-item" data-nome="croissant" data-cat="salgado">
+          <div class="card-item-imagem" style="background:#E8D5C0;"><img src="croissant.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+            </div>
+            <h3>Croissant</h3>
+            <p class="descricao">Tradicional croissant folhado francês!</p>
+            <p class="ingredientes">Feito com manteiga francesa, acompanhado de calda de frutas vermelhas ou molho de requeijão.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 21,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="secao-cardapio" data-cat="milkshake">
+      <h2 class="secao-cardapio-titulo">Milkshakes</h2>
+      <div class="grid-cardapio">
+
+        <div class="card-item" data-nome="milkshake sereia" data-cat="milkshake">
+          <div class="card-item-imagem" style="background:#FFFACC;"><img src="milkshakes.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags"><span class="tag tag-novo">Novo</span></div>
+            <h3>Milkshake Sereia</h3>
+            <p class="descricao">Sabor Blueberry.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 29,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="milkshake panda" data-cat="milkshake">
+          <div class="card-item-imagem" style="background:#C8E6C9;"><img src="milkshakes.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <div class="item-tags">
+            </div>
+            <h3>Milkshake Panda</h3>
+            <p class="descricao">Sabor chocolate.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 29,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-nome="milkshake unicórnio" data-cat="milkshake">
+          <div class="card-item-imagem" style="background:#FFD0D8;"><img src="milkshakes.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <h3>Milkshake Unicórnio</h3>
+            <p class="descricao">Sabor morango.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 29,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+
+        </div>
+                <div class="card-item" data-nome="milkshake coala" data-cat="milkshake">
+          <div class="card-item-imagem" style="background:#FFD0D8;"><img src="milkshakes.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <h3>Milkshake Coala</h3>
+            <p class="descricao">Sabor flocos.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 29,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+
+        </div>
+                <div class="card-item" data-nome="milkshake rainbow" data-cat="milkshake">
+          <div class="card-item-imagem" style="background:#FFD0D8;"><img src="milkshakes.jpeg" alt=""></div>
+          <div class="card-item-corpo">
+            <h3>Milkshake Rainbow</h3>
+            <p class="descricao">Sabor blue ice.</p>
+            <div class="item-rodape">
+              <span class="preco">R$ 29,90</span>
+              <span><span class="disponivel"></span><span class="status-texto status-disponivel">Disponível</span></span>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-logo">Goodies Bakery</span>
+    <p>Rua Coronel Brasilino Moura, 382 – Ahú, Curitiba – PR</p>
+    <p>Todos os dias • 12h às 19h</p>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com/goodiesbakery/" target="_blank">Instagram</a>
+      <a href="https://wa.me/5541999999999" target="_blank"> WhatsApp</a>
+      <a href="mailto:contato@goodiesbakery.com.br">E-mail</a>
+    </div>
+    <p style="margin-top:0.5rem; font-size:0.8rem;">© 2026 Goodies Bakery – Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function filtrarCategoria(cat, btn) {
+      document.querySelectorAll('.btn-filtro').forEach(b => b.classList.remove('ativo'));
+      btn.classList.add('ativo');
+
+      const secoes = document.querySelectorAll('.secao-cardapio');
+      const itens = document.querySelectorAll('.card-item');
+
+      if (cat === 'todos') {
+        secoes.forEach(s => s.style.display = '');
+        itens.forEach(i => i.style.display = '');
+      } else if (cat === 'promo') {
+        secoes.forEach(s => s.style.display = '');
+        itens.forEach(i => {
+          const cats = i.dataset.cat || '';
+          i.style.display = cats.includes('promo') ? '' : 'none';
+        });
+        secoes.forEach(s => {
+          const visiveis = s.querySelectorAll('.card-item:not([style*="none"])');
+          s.style.display = visiveis.length === 0 ? 'none' : '';
+        });
+      } else {
+        secoes.forEach(s => {
+          s.style.display = s.dataset.cat === cat ? '' : 'none';
+        });
+        itens.forEach(i => i.style.display = '');
+      }
+    }
+
+    function filtrarBusca() {
+      const termo = document.getElementById('campoBusca').value.toLowerCase();
+      document.querySelectorAll('.card-item').forEach(item => {
+        const nome = item.dataset.nome || '';
+        item.style.display = nome.includes(termo) ? '' : 'none';
+      });
+      document.querySelectorAll('.btn-filtro').forEach(b => b.classList.remove('ativo'));
+      document.querySelectorAll('.secao-cardapio').forEach(s => s.style.display = '');
+    }
+  </script>
+
+</body>
+</html>

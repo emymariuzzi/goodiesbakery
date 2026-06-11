@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato – Goodies Bakery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contato.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Goodies <span>Bakery</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cardapio.html">Cardápio</a></li>
+      <li><a href="reservas.html">Reservas</a></li>
+      <li><a href="contato.html" class="ativo">Contato</a></li>
+    </ul>
+  </nav>
+
+  <header class="contato-header">
+    <h1>Fale com a gente</h1>
+    <p>Estamos sempre felizes em ajudar — por onde preferir!</p>
+  </header>
+
+  <div class="contato-layout">
+
+    <div class="form-contato">
+      <h2>Enviar mensagem</h2>
+
+      <div class="campo-contato">
+        <label for="nomeContato">Seu nome</label>
+        <input type="text" id="nomeContato" placeholder="Como podemos te chamar?" required />
+      </div>
+
+      <div class="campo-contato">
+        <label for="emailContato">E-mail</label>
+        <input type="email" id="emailContato" placeholder="seu@email.com" required />
+      </div>
+
+      <div class="campo-contato">
+        <label for="assunto">Assunto</label>
+        <select id="assunto">
+          <option value="">Selecione o assunto</option>
+          <option value="cardapio">Dúvidas sobre o cardápio</option>
+          <option value="reserva">Reservas e agendamentos</option>
+          <option value="encomenda">Encomendas especiais</option>
+          <option value="satisfacao">Elogio ou reclamação</option>
+          <option value="outro">Outro assunto</option>
+        </select>
+      </div>
+
+      <div class="campo-contato">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+      </div>
+
+      <button class="btn-enviar" onclick="enviarMensagem()">Enviar mensagem ✉️</button>
+
+      <div class="confirmacao-envio" id="confirmacaoEnvio">
+        ✅ Mensagem enviada! Retornaremos em até 1 dia útil.
+      </div>
+    </div>
+
+    <div class="contato-info">
+
+      <a href="https://wa.me/5541999999999" target="_blank" class="canal-card canal-whatsapp">
+        <div class="canal-icone">💬</div>
+        <div class="canal-texto">
+          <h3>WhatsApp</h3>
+          <p>Resposta rápida! Fale direto com nossa equipe</p>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/goodiesbakery/" target="_blank" class="canal-card canal-instagram">
+        <div class="canal-icone">📷</div>
+        <div class="canal-texto">
+          <h3>Instagram</h3>
+          <p>@goodiesbakery · 130 mil seguidores</p>
+        </div>
+      </a>
+
+      <a href="mailto:contato@goodiesbakery.com.br" class="canal-card canal-email">
+        <div class="canal-icone"></div>
+        <div class="canal-texto">
+          <h3>E-mail</h3>
+          <p>contato@goodiesbakery.com.br</p>
+        </div>
+      </a>
+
+      <div class="endereco-card">
+        <h3>Onde estamos</h3>
+        <div class="endereco-linha">
+          <span class="emo"></span>
+          <span>Rua Coronel Brasilino Moura, 382 – Ahú<br>Curitiba – PR, Brasil</span>
+        </div>
+        <div class="endereco-linha">
+          <span class="emo"></span>
+          <span>Próximo à linha Verde e ao Parque Barigui</span>
+        </div>
+        <div class="mapa-placeholder">🗺️</div>
+      </div>
+
+      <div class="horarios-card">
+        <h3>Horários</h3>
+        <div class="horario-linha">
+          <span><strong>Seg – Sex</strong></span>
+          <span>12h às 19h <span class="badge-aberto">Aberto</span></span>
+        </div>
+        <div class="horario-linha">
+          <span><strong>Sábado</strong></span>
+          <span>11h às 20h <span class="badge-aberto">Aberto</span></span>
+        </div>
+        <div class="horario-linha">
+          <span><strong>Domingo</strong></span>
+          <span>12h às 18h <span class="badge-aberto">Aberto</span></span>
+        </div>
+        <div class="horario-linha">
+          <span><strong>Feriados</strong></span>
+          <span style="color:var(--rosa-escuro); font-weight:700;">Fechado</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Goodies Bakery</span>
+    <p>Rua Coronel Brasilino Moura, 382 – Ahú, Curitiba – PR</p>
+    <p>Todos os dias • 12h às 19h</p>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com/goodiesbakery/" target="_blank">Instagram</a>
+      <a href="https://wa.me/5541999999999" target="_blank"> WhatsApp</a>
+      <a href="mailto:contato@goodiesbakery.com.br"> E-mail</a>
+    </div>
+    <p style="margin-top:0.5rem; font-size:0.8rem;">© 2026 Goodies Bakery – Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>

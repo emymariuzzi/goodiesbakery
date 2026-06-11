@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservas – Goodies Bakery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="reservas.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Goodies <span>Bakery</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cardapio.html">Cardápio</a></li>
+      <li><a href="reservas.html" class="ativo">Reservas</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <header class="reservas-header">
+    <h1>Faça sua Reserva</h1>
+    <p>Garanta seu espaço e receba confirmação no WhatsApp ou e-mail</p>
+  </header>
+
+  <div class="reservas-layout">
+
+    <div class="form-reserva">
+      <h2>Reservar Mesa</h2>
+
+      <div class="campo-grupo">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" placeholder="Seu nome" required />
+      </div>
+
+      <div class="campo-grupo">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" oninput="mascaraCPF(this)" required />
+      </div>
+
+      <div class="campo-grupo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required />
+      </div>
+
+      <div class="campo-grupo">
+        <label for="telefone">WhatsApp (para confirmação)</label>
+        <input type="tel" id="telefone" placeholder="(41) 9 9999-9999" maxlength="16" oninput="mascaraTelefone(this)" />
+        <p class="hint">Informe seu WhatsApp para receber a confirmação</p>
+      </div>
+
+      <div class="dois-campos">
+        <div class="campo-grupo">
+          <label for="data">Data</label>
+          <input type="date" id="data" required onchange="verificarData()" />
+          <p class="hint" id="avisoData"></p>
+        </div>
+        <div class="campo-grupo">
+          <label for="horario">Horário</label>
+          <select id="horario" required>
+            <option value="">Selecione</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="dois-campos">
+        <div class="campo-grupo">
+          <label for="pessoas">Nº de pessoas</label>
+          <input type="number" id="pessoas" min="1" max="10" placeholder="Ex: 2" required />
+          <p class="hint">Mínimo 1 · Máximo 10 pessoas</p>
+        </div>
+        <div class="campo-grupo">
+          <label for="notificacao">Receber confirmação por</label>
+          <select id="notificacao">
+            <option value="whatsapp">WhatsApp</option>
+            <option value="email">E-mail</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="campo-grupo">
+        <label for="obs">Observações (opcional)</label>
+        <textarea id="obs" placeholder="Alguma restrição alimentar, ocasião especial, etc."></textarea>
+      </div>
+
+      <button class="btn-reservar" onclick="enviarReserva()">Confirmar Reserva </button>
+
+      <div class="aviso-notificacao">
+         Você receberá uma confirmação no WhatsApp ou e-mail informado acima
+      </div>
+    </div>
+
+    <div class="reservas-info">
+
+      <div class="info-card">
+        <h3>Dias disponíveis</h3>
+        <ul>
+          <li><span class="dot"></span> Segunda a Sexta — 12h às 18h</li>
+          <li><span class="dot"></span> Sábado — 11h às 19h</li>
+          <li><span class="dot"></span> Domingo — 12h às 17h</li>
+          <li style="color: var(--rosa-escuro);"><span style="background:var(--rosa-escuro);" class="dot"></span> Feriados — <strong>Fechado</strong></li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>📋 Regras de reserva</h3>
+        <ul class="regras-lista">
+          <li>Reservas somente para dias e horários disponíveis</li>
+          <li>Mínimo 1 pessoa · Máximo 10 pessoas por reserva</li>
+          <li>CPF, nome e e-mail obrigatórios para cadastro</li>
+          <li>Cancelamento até 2 horas antes do horário</li>
+          <li>Confirmação enviada por WhatsApp ou e-mail</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Onde estamos</h3>
+        <p style="font-size:0.9rem; color:var(--marrom-escuro); line-height:1.6;">
+           Rua Coronel Brasilino Moura, 382<br>
+          Ahú – Curitiba, PR<br><br>
+          <a href="https://wa.me/5541999999999" target="_blank" style="color:var(--marrom); font-weight:700; text-decoration:none;">Falar pelo WhatsApp</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cancelar-section">
+    <div class="cancelar-card">
+      <h2>Cancelar Reserva</h2>
+      <p>Informe seu CPF e e-mail para localizar e cancelar sua reserva</p>
+      <div class="cancelar-input-grupo">
+        <input type="text" id="cpfCancelar" placeholder="CPF cadastrado" maxlength="14" oninput="mascaraCPF(this)" />
+        <input type="email" id="emailCancelar" placeholder="E-mail cadastrado" />
+        <button class="btn-cancelar" onclick="cancelarReserva()">Cancelar</button>
+      </div>
+      <p id="msgCancelar" style="margin-top:1rem; font-size:0.88rem; color:var(--marrom-escuro);"></p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalConfirmacao">
+    <div class="modal-box">
+      <div class="icone-modal"></div>
+      <h2>Reserva Confirmada!</h2>
+      <p id="modalTexto">Sua reserva foi realizada com sucesso! Você receberá uma confirmação no WhatsApp informado.</p>
+      <button class="btn btn-primario" onclick="fecharModal()">Ótimo, obrigada!</button>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Goodies Bakery</span>
+    <p>Rua Coronel Brasilino Moura, 382 – Ahú, Curitiba – PR</p>
+    <p>Todos os dias • 12h às 19h</p>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com/goodiesbakery/" target="_blank">Instagram</a>
+      <a href="https://wa.me/5541999999999" target="_blank">WhatsApp</a>
+      <a href="mailto:contato@goodiesbakery.com.br">E-mail</a>
+    </div>
+    <p style="margin-top:0.5rem; font-size:0.8rem;">© 2026 Goodies Bakery – Todos os direitos reservados</p>
+  </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+.reservas-header {
+  background: linear-gradient(135deg, var(--lilas) 0%, var(--azul) 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.reservas-header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--marrom-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.reservas-header p {
+  color: var(--marrom-escuro);
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+.reservas-layout {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-reserva {
+  background: var(--branco);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 24px var(--sombra);
+}
+
+.form-reserva h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  color: var(--marrom);
+  margin-bottom: 1.8rem;
+}
+
+.campo-grupo {
+  margin-bottom: 1.4rem;
+}
+
+.campo-grupo label {
+  display: block;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--marrom);
+  margin-bottom: 0.45rem;
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(123,79,58,0.15);
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  color: var(--texto);
+  background: var(--creme);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+  border-color: var(--azul-escuro);
+  background: var(--branco);
+}
+
+.campo-grupo textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.dois-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--marrom-escuro);
+  opacity: 0.6;
+  margin-top: 0.3rem;
+}
+
+.btn-reservar {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 50px;
+  background: var(--marrom);
+  color: var(--branco);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-reservar:hover {
+  background: var(--marrom-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--sombra);
+}
+
+.aviso-notificacao {
+  background: var(--azul);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-size: 0.83rem;
+  color: var(--marrom-escuro);
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.reservas-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 3px 16px var(--sombra);
+}
+
+.info-card h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.15rem;
+  color: var(--marrom);
+  margin-bottom: 1rem;
+}
+
+.info-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.info-card ul li {
+  font-size: 0.9rem;
+  color: var(--marrom-escuro);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(123,79,58,0.07);
+}
+
+.info-card ul li:last-child {
+  border-bottom: none;
+}
+
+.info-card ul li .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--azul-escuro);
+  flex-shrink: 0;
+}
+
+.regras-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.regras-lista li {
+  font-size: 0.88rem;
+  color: var(--marrom-escuro);
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.regras-lista li::before {
+  position: absolute;
+  left: 0;
+  color: var(--azul-escuro);
+  font-weight: 800;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.ativo {
+  display: flex;
+}
+
+.modal-box {
+  background: var(--branco);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-box .icone-modal {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-box h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  color: var(--marrom);
+  margin-bottom: 0.75rem;
+}
+
+.modal-box p {
+  font-size: 0.9rem;
+  color: var(--marrom-escuro);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.cancelar-section {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.cancelar-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 3px 14px var(--sombra);
+  text-align: center;
+}
+
+.cancelar-card h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.3rem;
+  color: var(--marrom);
+  margin-bottom: 0.5rem;
+}
+
+.cancelar-card p {
+  font-size: 0.9rem;
+  color: var(--marrom-escuro);
+  opacity: 0.7;
+  margin-bottom: 1.2rem;
+}
+
+.cancelar-input-grupo {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cancelar-input-grupo input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(123,79,58,0.15);
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  min-width: 180px;
+}
+
+.cancelar-input-grupo input:focus {
+  border-color: var(--rosa-escuro);
+}
+
+.btn-cancelar {
+  padding: 0.75rem 1.5rem;
+  background: var(--rosa-escuro);
+  color: var(--branco);
+  border: none;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-cancelar:hover {
+  background: #d4829a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 750px) {
+  .reservas-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dois-campos {
+    grid-template-columns: 1fr;
+  }
+}

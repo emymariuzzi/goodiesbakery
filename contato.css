@@ -1,0 +1,328 @@
+
+.contato-header {
+  background: linear-gradient(135deg, var(--rosa) 0%, var(--lilas) 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.contato-header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--marrom-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.contato-header p {
+  color: var(--marrom-escuro);
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+.contato-layout {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-contato {
+  background: var(--branco);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 24px var(--sombra);
+}
+
+.form-contato h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  color: var(--marrom);
+  margin-bottom: 1.8rem;
+}
+
+.campo-contato {
+  margin-bottom: 1.3rem;
+}
+
+.campo-contato label {
+  display: block;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--marrom);
+  margin-bottom: 0.4rem;
+}
+
+.campo-contato input,
+.campo-contato textarea,
+.campo-contato select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(123,79,58,0.15);
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  color: var(--texto);
+  background: var(--creme);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.campo-contato input:focus,
+.campo-contato textarea:focus,
+.campo-contato select:focus {
+  border-color: var(--rosa-escuro);
+  background: var(--branco);
+}
+
+.campo-contato textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 50px;
+  background: var(--marrom);
+  color: var(--branco);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-enviar:hover {
+  background: var(--marrom-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--sombra);
+}
+
+.confirmacao-envio {
+  display: none;
+  background: var(--azul);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--marrom-escuro);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.canal-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 3px 14px var(--sombra);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.canal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--sombra);
+}
+
+.canal-card .canal-icone {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+}
+
+.canal-whatsapp .canal-icone { background: #D9F5D6; }
+.canal-instagram .canal-icone { background: var(--lilas); }
+.canal-email .canal-icone { background: var(--azul); }
+
+.canal-card .canal-texto h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--marrom);
+  margin-bottom: 0.15rem;
+}
+
+.canal-card .canal-texto p {
+  font-size: 0.83rem;
+  color: var(--marrom-escuro);
+  opacity: 0.7;
+}
+
+.endereco-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 3px 14px var(--sombra);
+}
+
+.endereco-card h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
+  color: var(--marrom);
+  margin-bottom: 1rem;
+}
+
+.endereco-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--marrom-escuro);
+  line-height: 1.5;
+}
+
+.endereco-linha .emo {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.mapa-placeholder {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(135deg, var(--azul) 0%, var(--lilas) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.horarios-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 3px 14px var(--sombra);
+}
+
+.horarios-card h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
+  color: var(--marrom);
+  margin-bottom: 1rem;
+}
+
+.horario-linha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(123,79,58,0.07);
+  color: var(--marrom-escuro);
+}
+
+.horario-linha:last-child {
+  border-bottom: none;
+}
+
+.horario-linha strong {
+  font-weight: 800;
+}
+
+.badge-aberto {
+  background: #D9F5D6;
+  color: #2E7D32;
+  padding: 0.15rem 0.65rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.satisfacao-section {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.satisfacao-card {
+  background: var(--rosa);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--sombra);
+}
+
+.satisfacao-card h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+  color: var(--marrom-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.satisfacao-card p {
+  color: var(--marrom-escuro);
+  opacity: 0.75;
+  margin-bottom: 1.8rem;
+  font-size: 0.95rem;
+}
+
+.estrelas-avaliacao {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.estrela-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.15s;
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+
+.estrela-btn:hover,
+.estrela-btn.ativa {
+  transform: scale(1.2);
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.satisfacao-textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.9rem 1.1rem;
+  border: 2px solid rgba(123,79,58,0.15);
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  background: var(--branco);
+  resize: vertical;
+  min-height: 90px;
+  outline: none;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.satisfacao-textarea:focus {
+  border-color: var(--marrom);
+}
+
+@media (max-width: 750px) {
+  .contato-layout {
+    grid-template-columns: 1fr;
+  }
+}
